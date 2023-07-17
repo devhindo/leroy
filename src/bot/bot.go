@@ -1,15 +1,15 @@
 package bot
 
 import (
-    "discord-bot/config"
+    "leroy/config"
     "log"
     "github.com/bwmarrin/discordgo"
 )
 
-var BotIDstring
+var BotID string = "1129975760430563358"
 var goBot *discordgo.Session
 
-funcRun() {
+func Run() {
 // create bot session
     goBot, err := discordgo.New("Bot " + config.Token)
     if err != nil {
@@ -29,15 +29,14 @@ funcRun() {
         return
     }
 }
-funcmessageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
+func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 // Ignore all messages created by the bot itself
     if m.Author.ID == BotID {
         return
     }
 // If the message is "Hi" reply with "Hi Back!!"
-    ifm.Content == "Hi" {
+    if m.Content == "Hi" {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
     }
 }
-    }
-}
+    

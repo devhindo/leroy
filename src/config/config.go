@@ -17,7 +17,7 @@ type configStruct struct {
     Prefix string `json:"prefix"`
 }
 
-funcReadConfig() error {
+func ReadConfig() error {
     file, err := ioutil.ReadFile("./config.json")
     if err != nil {
         log.Fatal(err)

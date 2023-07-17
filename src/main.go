@@ -1,9 +1,18 @@
 package main
 
 import (
-	"github.com/devhindo/leroy/bot"
-	"github.com/devhindo/leroy/config"
+	"leroy/bot"
+	"leroy/config"
+	"log"
 )
 
 func main() {
+	err := config.ReadConfig()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	bot.Run()
+	<-make(chan struct{})
+	return
 }

@@ -1,4 +1,4 @@
-module github.com/devhindo/leroy
+module leroy
 
 go 1.20
 

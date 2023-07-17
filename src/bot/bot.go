@@ -39,4 +39,3 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
     }
 }
-    

@@ -1,9 +1,11 @@
 package bot
 
 import (
-    "leroy/config"
-    "log"
-    "github.com/bwmarrin/discordgo"
+	"fmt"
+	"leroy/config"
+	"log"
+
+	"github.com/bwmarrin/discordgo"
 )
 
 var BotID string = "1129975760430563358"
@@ -34,8 +36,16 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
     if m.Author.ID == BotID {
         return
     }
-// If the message is "Hi" reply with "Hi Back!!"
+    // print bot permissions
+
+
+    // If the message is "Hi" reply with "Hi Back!!"
     if m.Content == "Hi" {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
+
+    } else {
+        fmt.Println(m.Message.Content)
+        _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
+
     }
 }

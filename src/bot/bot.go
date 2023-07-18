@@ -38,7 +38,5 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
     if m.Content == "Hi" {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
 
-    } else {
-        _, _ = s.ChannelMessageSend(m.ChannelID, "not Hi Back")
     }
 }

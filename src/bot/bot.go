@@ -34,9 +34,6 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
     if m.Author.ID == BotID {
         return
     }
-    // print bot permissions
-
-
     // If the message is "Hi" reply with "Hi Back!!"
     if m.Content == "Hi" {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")

@@ -1,10 +1,8 @@
 package bot
 
 import (
-	"fmt"
 	"leroy/config"
 	"log"
-
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -44,8 +42,6 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
         _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
 
     } else {
-        fmt.Println(m.Message.Content)
-        _, _ = s.ChannelMessageSend(m.ChannelID, "Hi Back")
-
+        _, _ = s.ChannelMessageSend(m.ChannelID, "not Hi Back")
     }
 }
